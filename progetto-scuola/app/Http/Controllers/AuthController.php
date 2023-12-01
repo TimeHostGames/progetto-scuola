@@ -16,7 +16,7 @@ class AuthController extends Controller
         $user = Auth::user();
 
         if(!$user)
-            return view('login');
+            return view('accedi');
         
         return redirect('/');
     }
@@ -31,28 +31,6 @@ class AuthController extends Controller
             return back()->with('error', 'Credenziali di accesso non corrette');
 
         $user = Auth::user();
-
-        // dd($user);
-        // if(!$user->email_verified_at && !$user->magic_link) {
-        //     $magic_link = (string) Str::uuid();
-
-        //     $user->magic_link = $magic_link;
-
-        //     $user->save();
-
-        //     $link_conferma = "https://dashboard.andreacarlizza.com/conferma/registrazione/" . $magic_link;
-        //     // SendInBlue::inviaMail($user->email,'conferma-registrazione',array('link' => $link_conferma));
-
-        //     Auth::logout();
-
-        //     return redirect()->route("login");
-        // }
-
-        // if(!$user->email_verified_at) {
-        //     Auth::logout();
-
-        //     return redirect()->route("login");
-        // }
 
         return redirect('/');
     }

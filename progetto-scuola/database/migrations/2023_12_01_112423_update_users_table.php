@@ -11,7 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::table('users', function (Blueprint $table) {
+            $table->uuid('uuid')->after('id');
+            $table->string('cognome', 25)->after('name');
+            $table->dropColumn("email_verified_at");
+            $table->dropColumn("remember_token");
+            $table->string('rfid_token', 15)->after('password');
+        });
     }
 
     /**
@@ -19,6 +25,11 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::table('users', function($table) {
+            $table->dropColumn("uuid");
+            $table->string("email_verified_at")->after('email');
+            $table->string("remember_token")->after('password');
+            $table->dropColumn("rfid_token");
+        });
     }
 };
