@@ -1,0 +1,26 @@
+body {
+    overflow-x: hidden;
+    height: 100%; /* Assicura che il body occupi l'intera altezza del viewport */
+    margin: 0; /* Rimuove il margine predefinito del body */
+}
+
+body::before {
+    content: ''; /* Necessario per gli pseudo-elementi */
+    position: fixed; /* Fissa lo pseudo-elemento rispetto alla viewport */
+    top: 18vh;
+    left: 15em;
+    right: 0;
+    bottom: 0;
+    background-image: url('/assets/img/Logo_scuola.webp'); /* Sostituisci con il percorso del tuo logo */
+    background-position: center center; /* Centra il logo nella pagina */
+    background-repeat: no-repeat; /* Impedisce al logo di ripetersi */
+    background-size: contain; /* Adatta il logo per assicurarsi che sia completamente visibile */
+    opacity: 0.2; /* Imposta l'opacità del logo. Modifica questo valore secondo le tue esigenze */
+    z-index: -1; /* Assicura che lo sfondo sia dietro a tutto il contenuto della pagina */
+    height: 68vh;
+}
+
+.container {
+    position: relative; /* Posiziona il contenuto sopra lo sfondo */
+    z-index: 1; /* Assicura che il contenuto sia sopra lo sfondo */
+}

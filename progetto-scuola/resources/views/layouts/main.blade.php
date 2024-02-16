@@ -8,6 +8,8 @@
 
     @vite('resources/css/app.css')
 
+    <link rel="stylesheet" href="/assets/css/general.css">
+
     @yield('styles')
 </head>
 <body>
@@ -125,13 +127,13 @@
         <!-- Sidebar component, swap this element with another sidebar if you like -->
         <div class="flex grow flex-col gap-y-5 overflow-y-auto bg-gray-900 px-6">
             <div class="flex h-16 shrink-0 items-center justify-center">
-                <img class="h-14 w-auto" src="https://www.fermifrascati.edu.it/images/banners/Logo.png" alt="Your Company">
+                <img class="w-auto" src="{{asset('/assets/img/Logo_progetto.png')}}" alt="Logo progetto" style="margin-top: 6em; height: 200px">
             </div>
-            <nav class="flex flex-1 flex-col">
+            <nav class="flex flex-1 flex-col" style="margin-top: 5em">
             <ul role="list" class="flex flex-1 flex-col gap-y-7">
                 <li>
                 <ul role="list" class="-mx-2 space-y-1">
-                    <li>
+                    {{-- <li>
                     <!-- Current: "bg-gray-800 text-white", Default: "text-gray-400 hover:text-white hover:bg-gray-800" -->
                     <a href="/" class="text-gray-400 hover:text-white hover:bg-gray-800 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
                         <svg class="h-6 w-6 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -139,7 +141,7 @@
                         </svg>
                         Home
                     </a>
-                    </li>
+                    </li> --}}
                     <li>
                     <a href="/users" class="text-gray-400 hover:text-white hover:bg-gray-800 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
                         <svg class="h-6 w-6 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">

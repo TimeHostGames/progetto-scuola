@@ -13,8 +13,6 @@ class HomeController extends Controller
     }
 
     public function view(Request $request) {
-        $user = Auth::user();
-
-        return view('home', compact("user"));
+        return redirect()->route('nome.rotta');
     }
 }
