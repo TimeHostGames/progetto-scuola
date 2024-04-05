@@ -13,7 +13,7 @@
         <h1 class="text-base font-semibold leading-6 text-gray-900">Utenti</h1>
       </div>
       <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
-        <button type="button" class="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Aggiungi utente</button>
+        <button type="button" class="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" onclick="openModal()">Aggiungi utente</button>
       </div>
     </div>
     <div class="mt-8 flow-root">
@@ -25,47 +25,54 @@
                 <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-3">Nome</th>
                 <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Cognome</th>
                 <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Email</th>
-                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Ruolo</th>
                 <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-3">
                   <span class="sr-only">Edit</span>
                 </th>
               </tr>
             </thead>
             <tbody class="bg-transparent">
-              <tr>
-                <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-3">Lindsay Walton</td>
-                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-900">Front-end Developer</td>
-                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-900">lindsay.walton@example.com</td>
-                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-900">Member</td>
-                <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-3">
-                  <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit<span class="sr-only">, Lindsay Walton</span></a>
-                </td>
-              </tr>
-              <tr>
-                <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-3">Lindsay Walton</td>
-                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-900">Front-end Developer</td>
-                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-900">lindsay.walton@example.com</td>
-                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-900">Member</td>
-                <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-3">
-                  <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit<span class="sr-only">, Lindsay Walton</span></a>
-                </td>
-              </tr>
-              <tr>
-                <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-3">Lindsay Walton</td>
-                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-900">Front-end Developer</td>
-                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-900">lindsay.walton@example.com</td>
-                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-900">Member</td>
-                <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-3">
-                  <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit<span class="sr-only">, Lindsay Walton</span></a>
-                </td>
-              </tr>
-  
-              <!-- More people... -->
+              <?php foreach($users as $u) { ?>
+                <tr>
+                  <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-3"><?= $u->name ?></td>
+                  <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-900"><?= $u->cognome ?></td>
+                  <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-900"><?= $u->email ?></td>
+                  <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-3">
+                    <a href="#" class="text-indigo-600 hover:text-indigo-900">Modifica</a>
+                  </td>
+                </tr>
+              <?php } ?>
             </tbody>
           </table>
         </div>
       </div>
     </div>
-  </div>
+    <div class="relative z-10 hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true" id="modale">
+      <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+    
+      <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+        <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+          <div class="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6">
+            <div>
+              <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-100">
+                <h1>sadadsad</h1>
+              </div>
+              <div class="mt-3 text-center sm:mt-5">
+                <h3 class="text-base font-semibold leading-6 text-gray-900" id="modal-title">Creazione utente</h3>
+                <div class="mt-2 grid-cols-2">
+                  <label for="nome">Nome</label>
+                  <input type="text" placeholder="Inserisci il nome">
+                </div>
+              </div>
+            </div>
+            <div class="mt-5 sm:mt-6 sm:grid sm:grid-flow-row-dense sm:grid-cols-2 sm:gap-3">
+              <button type="button" onclick="createUser()" class="inline-flex w-full justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 sm:col-start-2">Crea utente</button>
+              <button type="button" onclick="closeModal()" class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:col-start-1 sm:mt-0">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    
+</div>
+
   
 @endsection

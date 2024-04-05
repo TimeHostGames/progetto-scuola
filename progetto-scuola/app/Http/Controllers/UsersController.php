@@ -15,17 +15,15 @@ class UsersController extends Controller
     }
     
     public function index(Request $request) {
-        $user = Auth::user();
         $users = User::get();
 
-        // $users = $users->toArray();
+        return view('utenti', compact("users"));
+    }
 
-        // foreach($users as $i => $u) {
-        //     echo "<pre>";
-        //     print_r($u[$i]);
-        // }
-        // exit;
-
-        return view('utenti', compact("user"));
+    public function create(Request $request) {
+        $nome = $request->nome;
+        $cognome = $request->cognome;
+        $email = $request->email;
+        
     }
 }

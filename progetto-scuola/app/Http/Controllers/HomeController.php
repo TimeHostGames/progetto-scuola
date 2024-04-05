@@ -13,6 +13,6 @@ class HomeController extends Controller
     }
 
     public function view(Request $request) {
-        return redirect()->route('nome.rotta');
+        return view("home");
     }
 }
