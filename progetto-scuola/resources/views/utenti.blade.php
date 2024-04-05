@@ -58,10 +58,22 @@
               </div>
               <div class="mt-3 text-center sm:mt-5">
                 <h3 class="text-base font-semibold leading-6 text-gray-900" id="modal-title">Creazione utente</h3>
-                <div class="mt-2 grid-cols-2">
-                  <label for="nome">Nome</label>
-                  <input type="text" placeholder="Inserisci il nome">
-                </div>
+                  <div class="mt-4 mb-4">
+                    <label for="nome" class="block text-sm font-medium text-gray-700">Nome</label>
+                    <input type="text" name="nome" id="nome-input" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" required>
+                  </div>
+                  <div class="mb-4">
+                    <label for="cognome" class="block text-sm font-medium text-gray-700">Cognome</label>
+                    <input type="text" name="cognome" id="cognome-input" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" required>
+                  </div>
+                  <div class="mb-4">
+                    <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                    <input type="email" name="email" id="email-input" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" required>
+                  </div>
+                  <div class="mb-4">
+                    <label for="rfid" class="block text-sm font-medium text-gray-700">Rfid</label>
+                    <input type="rfid" name="rfid" id="rfid-input" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" required>
+                  </div>
               </div>
             </div>
             <div class="mt-5 sm:mt-6 sm:grid sm:grid-flow-row-dense sm:grid-cols-2 sm:gap-3">

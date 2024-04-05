@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+
+use Illuminate\Support\Str;
 
 use App\Models\User;
 
@@ -21,9 +24,19 @@ class UsersController extends Controller
     }
 
     public function create(Request $request) {
-        $nome = $request->nome;
-        $cognome = $request->cognome;
-        $email = $request->email;
+        $user = new User();
+
+        $user->uuid = Str::uuid();
+        $user->name = $request->nome;
+        $user->cognome = $request->cognome;
+        $user->email = $request->email;
+        $user->rfid_token = $request->rfid;
+        $user->password = Hash::make($request->password);
+
+        $user->save();
         
+        return response()->json([
+            'status' => "success"
+        ]);
     }
 }
