@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    @vite('resources/css/app.css')
+    {{-- @vite('resources/css/app.css') --}}
 
     {{-- <link rel="stylesheet" href="/assets/css/tailwind.min.css">  --}}
     <link rel="stylesheet" href="/assets/css/general.css">
