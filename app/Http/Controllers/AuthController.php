@@ -37,7 +37,7 @@ class AuthController extends Controller
 
         Auth::login($user);
 
-        // dd($user);
+        dd($user);
 
         return redirect('/');
     }
