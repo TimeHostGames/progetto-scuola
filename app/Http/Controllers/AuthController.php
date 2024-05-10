@@ -27,7 +27,7 @@ class AuthController extends Controller
             "password" => $request->password,
         ];
 
-        dd($credentials);
+        // dd($credentials);
 
         if(!Auth::attempt($credentials))
             // dd("ciaoss");
@@ -37,7 +37,7 @@ class AuthController extends Controller
 
         Auth::login($user);
 
-        dd($user);
+        // dd($user);
 
         return redirect('/');
     }
