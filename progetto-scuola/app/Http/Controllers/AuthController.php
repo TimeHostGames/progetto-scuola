@@ -31,7 +31,7 @@ class AuthController extends Controller
 
         if(!Auth::attempt($credentials))
             // dd("ciaoss");
-            return back()->with('error', 'Credenziali di accesso non correstte');
+            return back()->with('error', 'Credenziali di accesso non corrette');
 
         $user = Auth::user();
 
