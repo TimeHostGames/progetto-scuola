@@ -10,7 +10,7 @@
 <div class="px-4 sm:px-6 lg:px-8">
     <div class="sm:flex sm:items-center">
       <div class="sm:flex-auto">
-        <h1 class="text-base font-semibold leading-6 text-gray-900">Utenti</h1>
+        <h1 class="text-base font-semibold leading-6 text-gray-900">Logs</h1>
       </div>
       <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
         <button type="button" class="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" onclick="openModal()">Aggiungi utente</button>
@@ -22,25 +22,17 @@
           <table class="min-w-full divide-y divide-gray-300">
             <thead>
               <tr>
-                <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-3">Id</th>
-                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Nome</th>
-                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Cognome</th>
-                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Email</th>
-                <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-3">
-                  <span class="sr-only">Edit</span>
-                </th>
+                <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-3">Id utente</th>
+                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Log</th>
+                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Ora</th>
               </tr>
             </thead>
             <tbody class="bg-transparent">
-              <?php foreach($users as $u) { ?>
+              <?php foreach($logs as $l) { ?>
                 <tr>
-                  <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-3"><?= $u->id ?></td>
-                  <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-900"><?= $u->name ?></td>
-                  <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-900"><?= $u->cognome ?></td>
-                  <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-900"><?= $u->email ?></td>
-                  <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-3">
-                    <a href="#" class="text-indigo-600 hover:text-indigo-900">Modifica</a>
-                  </td>
+                  <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-3"><?= $l->user_id ?></td>
+                  <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-900"><?= $l->name ?></td>
+                  <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-900"><?= $l->created_at ?></td>
                 </tr>
               <?php } ?>
             </tbody>

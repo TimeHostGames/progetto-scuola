@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
 use App\Models\User;
+use App\Models\Log;
 
 class AuthController extends Controller
 {
@@ -37,8 +38,13 @@ class AuthController extends Controller
 
         Auth::login($user);
 
+        $log = new Log();
+        $log->name = "L'utente ha effettuato l'accesso";
+        $log->user_id = $user->id;
+        $log->save();
+
         // dd($user);
-        
+
         return redirect('/');
     }
 }

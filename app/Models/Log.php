@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class log extends Model
 {
-    use HasFactory, Notifiable;
+    use HasFactory;
 
     public $timestamps = true;
 
