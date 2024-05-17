@@ -41,7 +41,7 @@
                   <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-900"><?= $u->email ?></td>
                   <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-900"><?= $u->rfid_token ?></td>
                   <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-3">
-                    <a href="#" class="text-indigo-600 hover:text-indigo-900">Modifica</a>
+                    <a class="text-indigo-600 hover:text-indigo-900" onclick="apriModaleModifica(<?= $u->id ?>)">Modifica</a>
                   </td>
                 </tr>
               <?php } ?>
@@ -58,7 +58,7 @@
           <div class="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6">
             <div>
               <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-100">
-                <h1>sadadsad</h1>
+                <h1>DA METTE ICONA</h1>
               </div>
               <div class="mt-3 text-center sm:mt-5">
                 <h3 class="text-base font-semibold leading-6 text-gray-900" id="modal-title">Creazione utente</h3>
@@ -77,6 +77,10 @@
                   <div class="mb-4">
                     <label for="rfid" class="block text-sm font-medium text-gray-700">Rfid</label>
                     <input type="rfid" name="rfid" id="rfid-input" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" required>
+                  </div>
+                  <div class="mb-4">
+                    <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                    <input type="password" name="password" id="password-input" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" required>
                   </div>
               </div>
             </div>

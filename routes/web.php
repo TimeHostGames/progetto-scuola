@@ -27,6 +27,7 @@ Route::post('/login/user', [AuthController::class,'loginUser'])->name('login.use
 
 Route::get('/users', [UsersController::class,'index'])->name('users');
 Route::post('/users/create', [UsersController::class,'create'])->name('users.users');
+Route::get('/modale-modifica-utente',[UsersController::class,'modaleQrCode'])->name('places.modale-qr-code');
 
 /*
 |--------------------------------------------------------------------------
