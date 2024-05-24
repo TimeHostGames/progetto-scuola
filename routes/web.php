@@ -10,6 +10,8 @@ use App\Http\Controllers\LogsController;
 
 Route::get('/', [HomeController::class,'view'])->name('homepage');
 
+Route::get('/open_gate', [HomeController::class,'openGate']);
+
 /*
 |--------------------------------------------------------------------------
 | ACCESSO
