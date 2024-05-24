@@ -21,7 +21,7 @@ class HomeController extends Controller
         $port = 6000;
         $message = 's_opengate';
         
-        return json_encode(["stato" => sendSocketMessage($host, $port, $message)]);
+        return json_encode(["stato" => self::sendSocketMessage($host, $port, $message)]);
     }
 
     private function sendSocketMessage($host, $port, $message) {
