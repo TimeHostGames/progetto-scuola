@@ -18,7 +18,7 @@ class HomeController extends Controller
 
     public function openGate(Request $request) {
         $host = '172.20.10.5';
-        $port = 7000;
+        $port = 6000;
         $message = 's_opengate';
         
         // $log = new Log();
