@@ -20,11 +20,11 @@ class HomeController extends Controller
         $host = '172.20.10.5';
         $port = 7000;
         $message = 's_opengate';
-
-        $log = new Log();
-        $log->name = "Ha aperto il cancello";
-        $log->user_id = $user->id;
-        $log->save();
+        
+        // $log = new Log();
+        // $log->name = "Ha aperto il cancello";
+        // $log->user_id = $user->id;
+        // $log->save();
         
         return json_encode(["stato" => self::sendSocketMessage($host, $port, $message)]);
     }
