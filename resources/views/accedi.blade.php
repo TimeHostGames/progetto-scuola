@@ -35,3 +35,9 @@
     </div>
   </div>  
 @endsection
+
+<style>
+  body::before {
+    background-image: none !important;
+  }
+</style>
