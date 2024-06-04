@@ -17,6 +17,6 @@ class LogsController extends Controller
     public function delete(){
         Log::truncate();
 
-        return redirect()->goBack();
+        return redirect()->back();
     }
 }
