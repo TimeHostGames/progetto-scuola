@@ -39,6 +39,7 @@ Route::get('/logout',[UsersController::class,'logout'])->name('users.logout');
 */
 
 Route::get('/logs', [LogsController::class,'index'])->name('logs');
+Route::get('/delete_logs', [LogsController::class,'delete']);
 // Route::post('/users/create', [UsersController::class,'create'])->name('users.users');
 
 /*
