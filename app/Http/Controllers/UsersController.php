@@ -48,4 +48,46 @@ class UsersController extends Controller
         
         return redirect('/');
     }
+
+    public function modaleModifica(Request $request) {
+        $user = User::whereId($request->id)->first();
+
+        if(!$user)
+            return response()->json([
+                'status' => "error",
+                'messagge' => "L'utente non esiste",
+            ]);
+
+        $html = view('modals.utente',compact('user'))->render();
+
+        return response()->json([
+            'status' => "success",
+            'result' => $html
+        ]);
+    }
+
+    public function modifica(Request $request) {
+        $id = $request->id;
+        $nome = $request->nome;
+        $cognome = $request->cognome;
+        $email = $request->email;
+        $rfid = $request->rfid;
+
+        // dd($nome);
+
+        $user = User::whereId($id)->first();
+        // $user = User::findByUuid($request->uuid);
+
+        // dd($user);
+        $user->name = $nome;
+        $user->cognome = $cognome;
+        $user->email = $email;
+        $user->rfid_token = $rfid;
+
+        $user->save();
+
+        return response()->json([
+            'status' => "success"
+        ]);
+    }
 }
