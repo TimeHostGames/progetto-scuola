@@ -41,7 +41,7 @@
                   <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-900"><?= $u->email ?></td>
                   <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-900"><?= $u->rfid_token ?></td>
                   <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-3">
-                    <a class="text-indigo-600 hover:text-indigo-900" onclick="apriModaleModifica(<?= $u->id ?>)">Modifica</a>
+                    <button type="button" class="text-indigo-600 hover:text-indigo-900" onclick="apriModaleModifica()">Modifica</button>
                   </td>
                 </tr>
               <?php } ?>

@@ -42,18 +42,19 @@ function createUser() {
     });
 }
 
-function apriModaleModifica(id) {
-    $.ajax({
-        url: "/modale-modifica-utente",
-        method: "GET",
-        dataType: "json",
-        data: {
-            id: id
-        }
-    }).then((ajax_res) => {
-        if(ajax_res.status == "success") {
-            $('#contenitore-globale-modali').html(ajax_res.result);
-            $('#contenitore-globale-modali #modal-qr-code').modal('show');
-        }
-    });
+function apriModaleModifica() {
+    console.log("id");
+    // $.ajax({
+    //     url: "/modale-modifica-utente",
+    //     method: "GET",
+    //     dataType: "json",
+    //     data: {
+    //         id: id
+    //     }
+    // }).then((ajax_res) => {
+    //     if(ajax_res.status == "success") {
+    //         $('#contenitore-globale-modali').html(ajax_res.result);
+    //         $('#contenitore-globale-modali #modal-qr-code').modal('show');
+    //     }
+    // });
 }

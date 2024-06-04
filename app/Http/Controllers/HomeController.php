@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
 
+use App\Models\Log;
+
 class HomeController extends Controller
 {
     public function __construct() {
@@ -20,11 +22,13 @@ class HomeController extends Controller
         $host = '172.20.10.5';
         $port = 6000;
         $message = 's_opengate';
+
+        $user = Auth::user();
         
-        // $log = new Log();
-        // $log->name = "Ha aperto il cancello";
-        // $log->user_id = $user->id;
-        // $log->save();
+        $log = new Log();
+        $log->name = "Ha aperto il cancello";
+        $log->user_id = $user->id;
+        $log->save();
         
         return json_encode(["stato" => self::sendSocketMessage($host, $port, $message)]);
     }
